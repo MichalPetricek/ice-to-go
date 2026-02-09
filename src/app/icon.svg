@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Ice cream cone -->
+  <defs>
+    <linearGradient id="mint" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7dd3c0"/>
+      <stop offset="100%" style="stop-color:#5cb8a5"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd6e0"/>
+      <stop offset="100%" style="stop-color:#e07a9b"/>
+    </linearGradient>
+    <linearGradient id="cone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffb347"/>
+      <stop offset="100%" style="stop-color:#d4903a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Cone -->
+  <path d="M10 14 L16 30 L22 14 Z" fill="url(#cone)"/>
+  <path d="M11 16 L13 22 M15 16 L16 24 M19 16 L18 20" stroke="#d4903a" stroke-width="0.5" fill="none"/>
+  
+  <!-- Ice cream scoops -->
+  <ellipse cx="16" cy="11" rx="8" ry="6" fill="url(#mint)"/>
+  <ellipse cx="16" cy="6" rx="6" ry="5" fill="url(#pink)"/>
+  
+  <!-- Shine -->
+  <ellipse cx="13" cy="5" rx="1.5" ry="1" fill="white" opacity="0.6"/>
+  <ellipse cx="12" cy="10" rx="1" ry="0.7" fill="white" opacity="0.4"/>
+</svg>

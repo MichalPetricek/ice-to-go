@@ -6,43 +6,16 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#e8f8f5] via-white to-[#fff8e7]">
-      {/* Animated background blobs */}
+      {/* Animated background blobs - using CSS animations for better performance */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute -top-40 -left-40 w-80 h-80 bg-[#7dd3c0]/30 rounded-full blur-3xl"
+        <div
+          className="absolute -top-40 -left-40 w-80 h-80 bg-[#7dd3c0]/30 rounded-full blur-3xl animate-blob"
         />
-        <motion.div
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#ffd6e0]/40 rounded-full blur-3xl"
+        <div
+          className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#ffd6e0]/40 rounded-full blur-3xl animate-blob animation-delay-2000"
         />
-        <motion.div
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 100, 0],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#ffb347]/20 rounded-full blur-3xl"
+        <div
+          className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#ffb347]/20 rounded-full blur-3xl animate-blob animation-delay-4000"
         />
       </div>
 

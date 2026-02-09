@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Ice To Go | Automatická zmrzlina v ČR",
   description: "Objevte naše zmrzlinové automaty rozmístěné po celé České republice. Čerstvá, automaticky natočená zmrzlina kdykoliv potřebujete!",
   keywords: "zmrzlina, automat, ice cream, Ice To Go, Česká republika, zmrzlinový automat",
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "Ice To Go | Automatická zmrzlina v ČR",
     description: "Objevte naše zmrzlinové automaty rozmístěné po celé České republice.",
