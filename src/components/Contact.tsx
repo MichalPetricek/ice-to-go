@@ -41,7 +41,7 @@ export default function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="flex justify-center">
           {/* Contact info */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -66,20 +66,20 @@ export default function Contact() {
                 {
                   icon: "📧",
                   title: "Email",
-                  value: "info@icetogo.cz",
-                  link: "mailto:info@icetogo.cz",
+                  value: "zemstroje@gmail.com",
+                  link: "mailto:zemstroje@gmail.com",
                 },
                 {
                   icon: "📞",
                   title: "Telefon",
-                  value: "+420 123 456 789",
-                  link: "tel:+420123456789",
+                  value: "603 93 99 93",
+                  link: "tel:+420603939993",
                 },
                 {
-                  icon: "📍",
-                  title: "Adresa",
-                  value: "Praha, Česká republika",
-                  link: null,
+                  icon: "🌐",
+                  title: "Web",
+                  value: "icetogo.cz",
+                  link: "https://icetogo.cz",
                 },
               ].map((contact, index) => (
                 <motion.div
@@ -131,7 +131,8 @@ export default function Contact() {
             </div>
           </motion.div>
 
-          {/* Contact form */}
+          {/* Contact form - temporarily hidden, backend not ready (emailjs) */}
+          {/* 
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -146,7 +147,6 @@ export default function Contact() {
               </h3>
 
               <div className="space-y-6">
-                {/* Name field */}
                 <div>
                   <label
                     htmlFor="name"
@@ -168,7 +168,6 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Email field */}
                 <div>
                   <label
                     htmlFor="email"
@@ -190,7 +189,6 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Message field */}
                 <div>
                   <label
                     htmlFor="message"
@@ -212,7 +210,6 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Submit button */}
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
@@ -235,6 +232,7 @@ export default function Contact() {
               </div>
             </form>
           </motion.div>
+          */}
         </div>
       </div>
     </section>

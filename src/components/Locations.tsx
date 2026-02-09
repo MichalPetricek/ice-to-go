@@ -5,16 +5,13 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
 const locations = [
-  { city: "Praha", address: "OC Letňany, Veselská 663", status: "active" },
-  { city: "Praha", address: "Galerie Harfa, Českomoravská 2420/15a", status: "active" },
-  { city: "Brno", address: "Galerie Vaňkovka, Ve Vaňkovce 1", status: "active" },
-  { city: "Ostrava", address: "Forum Nová Karolina, Jantarová 3344/4", status: "active" },
-  { city: "Plzeň", address: "OC Olympia, Písecká 972/1", status: "active" },
-  { city: "Olomouc", address: "Galerie Šantovka, Polská 1", status: "active" },
-  { city: "Liberec", address: "OC Nisa, České mládeže 456", status: "active" },
-  { city: "České Budějovice", address: "IGY Centrum, Pražská tř. 1247/24", status: "active" },
-  { city: "Hradec Králové", address: "Aupark, Gočárova třída 1754/48a", status: "coming" },
-  { city: "Pardubice", address: "Galerie Pardubice", status: "coming" },
+  { city: "Mladá Boleslav", address: "OLYMPIA Mladá Boleslav", status: "coming" },
+  { city: "Praha", address: "Westfield Černý Most", status: "coming" },
+  { city: "Praha", address: "Westfield Chodov", status: "coming" },
+  { city: "Praha", address: "Palladium Praha", status: "coming" },
+  { city: "Praha", address: "OC Nový Smíchov", status: "coming" },
+  { city: "Praha", address: "Letiště Václava Havla Praha", status: "coming" },
+  { city: "Mladá Boleslav", address: "Bondy Centrum", status: "coming" },
 ];
 
 export default function Locations() {
@@ -47,41 +44,33 @@ export default function Locations() {
             📍 Kde nás najdete
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-            Automaty po celé{" "}
-            <span className="gradient-text">České republice</span>
+            Místa, která{" "}
+            <span className="gradient-text">připravujeme</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Naše síť se neustále rozrůstá. Najděte nejbližší automat a ochutnejte 
-            tu nejlepší zmrzlinu!
+            Brzy budete moci ochutnat naši zmrzlinu na těchto místech!
           </p>
         </motion.div>
 
-        {/* Filter buttons */}
+        {/* Partnerships info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center gap-4 mb-12"
+          className="mb-12 space-y-4"
         >
-          {[
-            { value: "all", label: "Všechny" },
-            { value: "active", label: "V provozu" },
-            { value: "coming", label: "Připravujeme" },
-          ].map((btn) => (
-            <motion.button
-              key={btn.value}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setFilter(btn.value as typeof filter)}
-              className={`px-6 py-3 rounded-full font-medium transition-all ${
-                filter === btn.value
-                  ? "bg-gradient-to-r from-[#7dd3c0] to-[#5cb8a5] text-white shadow-lg"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-              }`}
-            >
-              {btn.label}
-            </motion.button>
-          ))}
+          <div className="bg-gradient-to-r from-[#7dd3c0]/10 to-[#5cb8a5]/10 rounded-2xl p-6 text-center">
+            <div className="text-3xl mb-2">⛽</div>
+            <p className="text-gray-700 font-medium">
+              Jednáme s několika řetězci benzínových pump
+            </p>
+          </div>
+          <div className="bg-gradient-to-r from-[#ffb347]/10 to-[#ffd6e0]/10 rounded-2xl p-6 text-center">
+            <div className="text-3xl mb-2">🚂</div>
+            <p className="text-gray-700 font-medium">
+              Vstoupili jsme do jednání s Českými dráhami, aby naše zmrzlina byla na každém nádraží
+            </p>
+          </div>
         </motion.div>
 
         {/* Locations grid */}

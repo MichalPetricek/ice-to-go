@@ -85,13 +85,15 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <span>📞</span>
-                <a href="tel:+420123456789" className="hover:text-[#7dd3c0] transition-colors">
-                  +420 123 456 789
+                <a href="tel:+420603939993" className="hover:text-[#7dd3c0] transition-colors">
+                  603 93 99 93
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <span>📍</span>
-                <span>Praha, Česká republika</span>
+                <span>🌐</span>
+                <a href="https://icetogo.cz" className="hover:text-[#7dd3c0] transition-colors">
+                  icetogo.cz
+                </a>
               </li>
             </ul>
           </div>
