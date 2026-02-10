@@ -66,8 +66,8 @@ export default function Contact() {
                 {
                   icon: "📧",
                   title: "Email",
-                  value: "zemstroje@gmail.com",
-                  link: "mailto:zemstroje@gmail.com",
+                  value: "info@icetogo.cz",
+                  link: "mailto:info@icetogo.cz",
                 },
                 {
                   icon: "📞",
