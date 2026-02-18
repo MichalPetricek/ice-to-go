@@ -2,26 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
-
-const locations = [
-  { city: "Mladá Boleslav", address: "OLYMPIA Mladá Boleslav", status: "coming" },
-  { city: "Praha", address: "Westfield Černý Most", status: "coming" },
-  { city: "Praha", address: "Westfield Chodov", status: "coming" },
-  { city: "Praha", address: "Palladium Praha", status: "coming" },
-  { city: "Praha", address: "OC Nový Smíchov", status: "coming" },
-  { city: "Praha", address: "Letiště Václava Havla Praha", status: "coming" },
-  { city: "Mladá Boleslav", address: "Bondy Centrum", status: "coming" },
-];
+import { useRef } from "react";
 
 export default function Locations() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [filter, setFilter] = useState<"all" | "active" | "coming">("all");
-
-  const filteredLocations = locations.filter(
-    (loc) => filter === "all" || loc.status === filter
-  );
 
   return (
     <section id="kde-nas-najdete" className="py-20 md:py-32 bg-white relative overflow-hidden">
@@ -71,66 +56,6 @@ export default function Locations() {
               Vstoupili jsme do jednání s Českými dráhami, aby naše zmrzlina byla na každém nádraží
             </p>
           </div>
-        </motion.div>
-
-        {/* Locations grid */}
-        <motion.div
-          layout
-          className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-        >
-          {filteredLocations.map((location, index) => (
-            <motion.div
-              key={`${location.city}-${location.address}`}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3, delay: index * 0.05 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className={`relative bg-white rounded-2xl p-6 shadow-lg border-2 transition-all ${
-                location.status === "active"
-                  ? "border-[#7dd3c0] hover:shadow-[#7dd3c0]/20"
-                  : "border-[#ffb347] hover:shadow-[#ffb347]/20"
-              } hover:shadow-xl`}
-            >
-              {/* Status badge */}
-              <div
-                className={`absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-medium ${
-                  location.status === "active"
-                    ? "bg-[#7dd3c0] text-white"
-                    : "bg-[#ffb347] text-white"
-                }`}
-              >
-                {location.status === "active" ? "V provozu" : "Brzy"}
-              </div>
-
-              {/* Location icon */}
-              <div className="w-12 h-12 bg-gradient-to-r from-[#7dd3c0]/20 to-[#ffd6e0]/20 rounded-xl flex items-center justify-center text-2xl mb-4">
-                📍
-              </div>
-
-              {/* City */}
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
-                {location.city}
-              </h3>
-
-              {/* Address */}
-              <p className="text-gray-600 text-sm">
-                {location.address}
-              </p>
-
-              {/* Action button */}
-              {location.status === "active" && (
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="mt-4 w-full py-2 bg-gradient-to-r from-[#7dd3c0] to-[#5cb8a5] text-white text-sm font-medium rounded-xl hover:shadow-lg transition-shadow"
-                >
-                  Navigovat →
-                </motion.button>
-              )}
-            </motion.div>
-          ))}
         </motion.div>
 
         {/* Map placeholder */}

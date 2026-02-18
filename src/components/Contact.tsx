@@ -112,6 +112,28 @@ export default function Contact() {
               ))}
             </div>
 
+            {/* Company info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.4 }}
+              className="mt-10 p-6 bg-white rounded-2xl shadow-lg"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-r from-[#7dd3c0] to-[#5cb8a5] rounded-xl flex items-center justify-center text-xl">
+                  🏢
+                </div>
+                <div className="text-sm text-gray-500 font-medium">Provozovatel</div>
+              </div>
+              <div className="space-y-1 text-gray-700">
+                <p className="font-semibold text-gray-800">SIMONIDES s.r.o.</p>
+                <p>Zenklova 24/54</p>
+                <p>180 00 Praha</p>
+                <p>IČO: 25018604</p>
+                <p>č.ú.: 3202658015/3030</p>
+              </div>
+            </motion.div>
+
             {/* Social links */}
             <div className="mt-10">
               <div className="text-sm text-gray-500 mb-4">Sledujte nás</div>
